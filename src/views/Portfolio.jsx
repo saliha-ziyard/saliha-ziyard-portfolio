@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
   FaLayerGroup, 
-  FaCode, 
-  FaUser, 
+  FaCode,  
   FaGithub, 
   FaLinkedin, 
   FaEnvelope, 
@@ -11,7 +10,7 @@ import {
   FaMoon, 
   FaSun 
 } from 'react-icons/fa';
-import profileImg from '../assets/profileImg.jpeg'; // Make sure you have your profile image here!
+import profileImg from '../assets/profileImg.jpeg'; 
 import mitomatchHomePg from '../assets/mitomatchHomePg.png';
 import gearupHomePg from '../assets/gearupHomePg.png';
 import swasthaHomePg from '../assets/swasthaHomePg.png';
