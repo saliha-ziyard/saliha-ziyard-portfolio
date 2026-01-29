@@ -176,7 +176,7 @@ const projects = [
               Software Engineer
             </h2>
             <p className="hero-text">
-              Passionate about crafting intuitive, scalable applications. Specialized in full-stack development with a strong foundation in frontend technologies and backend services.
+              Passionat about crafting intuitive, scalable applications. Specialized in full-stack development with a strong foundation in frontend technologies and backend services.
             </p>
             <div className="hero-buttons">
               <button onClick={() => scrollToSection('projects')} className="btn btn-primary">
