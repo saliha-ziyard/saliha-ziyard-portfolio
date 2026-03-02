@@ -1,13 +1,329 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+/* @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tw-animate-css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  font-weight: 500;
+  color: #7dd3fc;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #38bdf8;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #7dd3fc;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #0c4a6e;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  :root {
+    /* Blue Background Luxury Palette */
+    --background: 187 62% 26%;
+
+    --foreground: 0 0% 100%;
+
+    --card: 187 62% 20%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 187 62% 20%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Accent - Pure White for luxury contrast */
+    --primary: 0 0% 100%;
+    --primary-foreground: 187 62% 26%;
+
+    /* Muted surfaces with blue tint */
+    --secondary: 187 50% 35%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 187 40% 40%;
+    --muted-foreground: 187 20% 80%;
+
+    --accent: 187 55% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 187 40% 45%;
+    --input: 187 50% 35%;
+    --ring: 187 70% 70%;
+
+    --radius: 0.5rem;
+
+    /* Custom effects - adjusted for blue */
+    --gradient-luxury: linear-gradient(135deg, hsl(187 70% 70%), hsl(187 60% 50%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    --gradient-radial: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(125, 211, 252, 0.08), transparent 40%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 80px -20px rgba(125, 211, 252, 0.3);
+    --shadow-card: 0 25px 80px -20px rgba(0, 0, 0, 0.8);
+
+    /* Sidebar */
+    --sidebar-background: 187 62% 22%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 187 62% 26%;
+    --sidebar-accent: 187 55% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 187 40% 45%;
+    --sidebar-ring: 187 70% 70%;
+    
+    --chart-1: 187 70% 60%;
+    --chart-2: 160 60% 55%;
+    --chart-3: 30 80% 65%;
+    --chart-4: 280 65% 70%;
+    --chart-5: 340 75% 65%;
+  }
+
+  .dark {
+    --background: 187 62% 18%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-sky-400/30 text-foreground;
+  }
+}
+
+@layer components {
+  .font-mono {
+    font-family: 'Space Mono', monospace;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-luxury);
+  }
+
+  .glass-panel {
+    @apply bg-card/40 backdrop-blur-2xl border border-border/40;
+    background-image: var(--gradient-glass);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-elevated {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Luxury line */
+  .luxury-line {
+    @apply h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent;
+  }
+
+  /* Animated border */
+  .border-animated {
+    @apply relative;
+  }
+
+  .border-animated::before {
+    content: '';
+    @apply absolute inset-0 rounded-none;
+    background: linear-gradient(90deg, transparent, rgba(125,211,252,0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Section reveal */
+  .reveal-up {
+    @apply opacity-0 translate-y-16;
+  }
+
+  .reveal-up.visible {
+    @apply opacity-100 translate-y-0 transition-all duration-1000 ease-out;
+  }
+
+  /* Magnetic button effect */
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-all duration-500;
+  }
+
+  .magnetic-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-foreground translate-y-full transition-transform duration-500;
+  }
+
+  .magnetic-btn:hover::before {
+    @apply translate-y-0;
+  }
+
+  .magnetic-btn:hover {
+    @apply text-background;
+  }
+
+  /* Text reveal animation */
+  .text-reveal {
+    @apply overflow-hidden;
+  }
+
+  .text-reveal span {
+    @apply inline-block transform translate-y-full opacity-0;
+    animation: textReveal 0.8s ease-out forwards;
+  }
+
+  /* Horizontal scroll text */
+  .scroll-text {
+    animation: scrollText 20s linear infinite;
+  }
+
+  /* Keyframes */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes textReveal {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+    50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 30s linear infinite;
+  }
+
+  /* Grain overlay */
+  .grain-overlay::after {
+    content: '';
+    @apply fixed inset-0 pointer-events-none opacity-[0.02] z-50;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Large display text */
+  .display-text {
+    @apply text-7xl md:text-9xl lg:text-[12rem] font-extrabold leading-none tracking-tighter;
+  }
+
+  /* Outline text */
+  .text-outline {
+    -webkit-text-stroke: 1px hsl(var(--foreground));
+    color: transparent;
+  }
+
+  /* Cursor follower base */
+  .cursor-glow {
+    @apply fixed w-[500px] h-[500px] rounded-full pointer-events-none z-0;
+    background: radial-gradient(circle, rgba(125,211,252,0.06) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+  }
+}
+
+@layer utilities {
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-1000 { animation-delay: 1000ms; }
 }
