@@ -35,10 +35,10 @@ const Index = () => {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <ExperienceSection />
         <EducationSection />
         <ProjectsSection />
-        <SkillsSection />
         <ContactSection />
       </main>
       

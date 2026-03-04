@@ -7,9 +7,9 @@ const ContactSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:hello@salihaziyard.dev', label: 'Email' },
+    { icon: Github, href: 'https://github.com/saliha-ziyard/', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/saliha-ziyard-64a366223/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:salihaziyard@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -62,7 +62,7 @@ const ContactSection = () => {
             className="mt-12"
           >
             <a
-              href="mailto:hello@salihaziyard.dev"
+              href="mailto:salihaziyard@gmail.com"
               className="group magnetic-btn inline-flex items-center gap-3 px-12 py-6 border border-foreground text-foreground font-medium text-lg tracking-wider uppercase relative z-10"
             >
               <span className="relative z-10">Say Hello</span>

@@ -8,20 +8,61 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: 'Languages',
-    skills: ['TypeScript', 'JavaScript', 'Python', 'Java', 'SQL', 'HTML/CSS'],
-  },
-  {
     name: 'Frontend',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
+    skills: [
+      'React',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+      'Redux',
+      'Material-UI',
+      'Electron',
+    ],
   },
   {
-    name: 'Backend',
-    skills: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Redis'],
+    name: 'Backend & Data',
+    skills: [
+      'Python',
+      'Node.js',
+      'Next.js',
+      'Express.js',
+      'Flask',
+      'RESTful APIs',
+      'PostgreSQL',
+      'MongoDB',
+      'MySQL',
+    ],
   },
   {
-    name: 'DevOps & Tools',
-    skills: ['AWS', 'Docker', 'Git', 'CI/CD', 'Linux', 'Kubernetes'],
+    name: 'Cloud & Tools',
+    skills: [
+      'Azure (transferable to AWS)',
+      'Docker',
+      'Git',
+      'Postman',
+      'Microsoft Power Automate',
+      'Firebase',
+    ],
+  },
+  {
+    name: 'Data & ML',
+    skills: [
+      'Pandas',
+      'NumPy',
+      'Matplotlib',
+      'Seaborn',
+      'Scikit-learn',
+      'TensorFlow / Keras',
+      'PyTorch',
+    ],
+  },
+  {
+    name: 'Other',
+    skills: [
+      'Figma',
+      'JWT',
+      'API Integrations',
+    ],
   },
 ];
 
@@ -30,7 +71,7 @@ const SkillsSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
   return (
-    <section id="skills" className="py-32 px-6 relative bg-muted/5">
+    <section id="skills" className="py-6 px-6 relative bg-muted/5">
       <div ref={containerRef} className="container mx-auto">
         {/* Section header */}
         <motion.div
@@ -42,15 +83,14 @@ const SkillsSection = () => {
           <span className="font-mono text-sm text-muted-foreground tracking-[0.3em] uppercase">
             Skills
           </span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mt-4">
-            Technical
-            <br />
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mt-4">
+            Technical {""}
             <span className="text-outline">expertise</span>
           </h2>
         </motion.div>
 
         {/* Skills grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.name}
@@ -59,7 +99,7 @@ const SkillsSection = () => {
               transition={{ duration: 0.8, delay: 0.1 * categoryIndex }}
               className="group"
             >
-              <div className="border-t border-border/50 pt-6">
+              <div className="">
                 <h3 className="font-mono text-sm text-muted-foreground uppercase tracking-wider mb-6">
                   {category.name}
                 </h3>
@@ -67,7 +107,7 @@ const SkillsSection = () => {
                   {category.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="text-foreground hover:text-foreground/70 transition-colors cursor-default text-lg"
+                      className="text-foreground hover:text-foreground/70 transition-colors cursor-default text-base sm:text-lg"
                     >
                       {skill}
                     </li>
@@ -77,27 +117,6 @@ const SkillsSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Expertise areas */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-24 border-t border-border/30 pt-12"
-        >
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
-            {['Full Stack Development', 'System Architecture', 'API Design', 'Performance Optimization', 'Cloud Infrastructure'].map(
-              (area) => (
-                <span
-                  key={area}
-                  className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-default"
-                >
-                  {area}
-                </span>
-              )
-            )}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

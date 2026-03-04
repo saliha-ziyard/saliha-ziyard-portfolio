@@ -1,98 +1,113 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { GraduationCap, FlaskConical, ExternalLink } from 'lucide-react';
 
 const EducationSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
   return (
-    <section id="education" className="py-32 px-6 relative bg-muted/5">
-      <div ref={containerRef} className="container mx-auto">
-        {/* Section header */}
+    <section id="education" className="py-24 px-5 sm:px-6 lg:px-8 relative">
+      <div ref={containerRef} className="max-w-5xl mx-auto">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
+          transition={{ duration: 0.7 }}
+          className="mb-12 md:mb-16 text-center md:text-left"
         >
-          <span className="font-mono text-sm text-muted-foreground tracking-[0.3em] uppercase">
+          <span className="font-mono text-xs sm:text-sm tracking-widest uppercase text-white/60">
             Education
           </span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mt-4">
-            Academic
-            <br />
-            <span className="text-outline">foundation</span>
+          <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+            Academic <span className="text-outline">foundation</span>
           </h2>
         </motion.div>
 
-        {/* Main education card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="border border-border/50 p-8 md:p-12 hover:border-foreground/20 transition-colors duration-500 group">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
-              <div className="flex-1">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 border border-border/50 flex items-center justify-center group-hover:border-foreground/30 transition-colors">
-                    <GraduationCap className="text-foreground" size={24} />
+        <div className="space-y-6">
+
+          {/* Degree card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.15 }}
+          >
+            <div className="group bg-white/5 border border-white/15 rounded-xl p-6 md:p-8 hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 backdrop-blur-sm">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/15 transition-colors">
+                    <GraduationCap className="text-white/80" size={22} />
                   </div>
                   <div>
-                    <span className="font-mono text-sm text-muted-foreground">2020 — 2024</span>
-                  </div>
-                </div>
-
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  BSc Computer Science
-                </h3>
-                <p className="text-lg text-muted-foreground mb-1">
-                  with Industrial Experience
-                </p>
-                <p className="text-muted-foreground">
-                  University of Westminster, UK <span className="text-muted-foreground/50">· IIT Sri Lanka</span>
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="text-right">
-                  <span className="block text-5xl md:text-6xl font-bold text-foreground">1st</span>
-                  <span className="text-sm text-muted-foreground font-mono">Class Honours</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Achievements */}
-            <div className="mt-12 pt-8 border-t border-border/30">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 border border-border/50 flex items-center justify-center shrink-0">
-                    <Award size={18} className="text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-foreground">Dean's List</h4>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Consistent academic excellence throughout the program
+                    <span className="font-mono text-xs text-white/55">2021 — 2025</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
+                    BSc (Hons) Computer Science
+                    <span className="text-white/60 font-normal text-sm sm:text-base block sm:inline">
+                      {' '}with Industrial Experience
+                    </span>
+                  </h3>
+                    <p className="text-white/65 text-sm mt-1">
+                      Informatics Institute of Technology · University of Westminster, UK
                     </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 border border-border/50 flex items-center justify-center shrink-0">
-                    <BookOpen size={18} className="text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-foreground">Industrial Placement</h4>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Year-long industry experience in the UK
+                     <p className="text-white/65 text-sm mt-1">
+                      Fiesr Class Honours
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* mitoMatch research card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.28 }}
+          >
+            <div className="group bg-white/5 border border-white/15 rounded-xl p-6 md:p-8 hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 backdrop-blur-sm">
+              <div className="flex gap-4 items-start">
+                <div className="w-11 h-11 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/15 transition-colors">
+                  <FlaskConical className="text-white/80" size={20} />
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <div>
+                      <span className="font-mono text-xs text-white/55">Academic Research Project · 2024</span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mt-1 inline-flex items-center gap-2">
+                        mitoMatch
+                        {/* <ExternalLink size={15} className="opacity-0 group-hover:opacity-60 transition-opacity text-white/60" /> */}
+                      </h3>
+                    </div>
+                    {/* Publication badge */}
+                    <span className="self-start sm:self-auto px-3 py-1 text-xs font-mono rounded-full bg-white/10 border border-white/25 text-white/75 whitespace-nowrap">
+                      Under Review · RECOMB 2026
+                    </span>
+                  </div>
+
+                  <p className="text-white/75 text-sm sm:text-base leading-relaxed mb-4 group-hover:text-white/90 transition-colors">
+                    Full-stack ML genomic web tool for mtDNA analysis — identifies human relatedness from genetic data. Built a React frontend with a Flask backend and MongoDB, using BioPython, Pandas, NumPy and SHAP for model interpretability.
+                  </p>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {['React', 'Flask', 'MongoDB', 'BioPython', 'Pandas', 'NumPy', 'SHAP', 'TensorFlow'].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 text-xs font-mono bg-white/10 border border-white/20 rounded text-white/80 group-hover:bg-white/15 group-hover:border-white/30 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center relative px-20 pt-20">
+    <section className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-20 pt-20">
       <div className="container mx-auto">
         <div className="max-w-6xl">
           {/* Pre-title */}
@@ -13,7 +13,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <span className="font-mono text-muted-foreground text-sm tracking-[0.3em] uppercase ml-4">
+            <span className="font-mono text-muted-foreground text-sm tracking-[0.3em] uppercase">
               Software Engineer
             </span>
           </motion.div>
@@ -24,7 +24,7 @@ const HeroSection = () => {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              className="display-text text-foreground text-[150px]"
+              className="display-text text-foreground text-[clamp(3.5rem,15vw,150px)] leading-none"
             >
               Saliha
             </motion.h1>
@@ -35,7 +35,7 @@ const HeroSection = () => {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-              className="display-text text-outline text-[150px]"
+              className="display-text text-outline text-[clamp(3.5rem,15vw,150px)] leading-none"
             >
               Ziyard
             </motion.h1>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
-            <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-relaxed">
+            <p className="text-muted-foreground text-base md:text-xl max-w-md leading-relaxed">
               First-class Computer Science graduate crafting elegant digital experiences. 
               Currently engineering solutions at{' '}
               <span className="text-foreground font-medium">IWMI</span>.
@@ -75,6 +75,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-4 flex flex-wrap gap-6"
           >
+            <div className="mt-4 flex flex-col sm:flex-row gap-4 sm:gap-6">
             <a
               href="#contact"
               className="group magnetic-btn px-10 py-5 border border-foreground text-foreground font-medium text-sm tracking-wider uppercase relative z-10"
@@ -87,6 +88,7 @@ const HeroSection = () => {
             >
               View Work →
             </a>
+            </div>
           </motion.div>
         </div>
       </div>
