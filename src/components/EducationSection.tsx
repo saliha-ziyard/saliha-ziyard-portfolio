@@ -52,7 +52,7 @@ const EducationSection = () => {
                       Informatics Institute of Technology · University of Westminster, UK
                     </p>
                      <p className="text-white/65 text-sm mt-1">
-                      Fiesr Class Honours
+                      First Class Honours
                     </p>
                   </div>
                 </div>
