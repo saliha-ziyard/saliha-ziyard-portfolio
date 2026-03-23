@@ -88,12 +88,12 @@ const ExperienceSection = () => {
               >
                 {/* Timeline dot + period */}
                 <div className="flex items-center mb-3 md:absolute md:left-0 md:top-1.5 md:mb-0">
-                  <div className="hidden md:flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/50 bg-transparent z-10 shrink-0 group-hover:border-white transition-colors">
+                  {/* <div className="hidden md:flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/50 bg-transparent z-10 shrink-0 group-hover:border-white transition-colors">
                     <div className="w-2.5 h-2.5 rounded-full bg-white/60 group-hover:bg-white transition-colors" />
-                  </div>
-                  <span className="font-mono text-sm text-white/70 md:ml-3 whitespace-nowrap group-hover:text-white/90 transition-colors">
+                  </div> */}
+                  {/* <span className="font-mono text-sm text-white/70 md:ml-3 whitespace-nowrap group-hover:text-white/90 transition-colors">
                     {exp.period}
-                  </span>
+                  </span> */}
                 </div>
 
                 {/* Card */}
@@ -106,7 +106,7 @@ const ExperienceSection = () => {
                         {/* <ExternalLink size={16} className="opacity-0 group-hover:opacity-60 transition-opacity text-white/60" /> */}
                       </h3>
                       <p className="text-sm sm:text-base text-white/65 mt-0.5 font-medium">
-                        {exp.company} · {exp.location}
+                        {exp.company} · {exp.location} · {exp.period}
                       </p>
                     </div>
 
