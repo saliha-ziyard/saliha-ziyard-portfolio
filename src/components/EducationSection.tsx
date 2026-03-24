@@ -75,9 +75,9 @@ const EducationSection = () => {
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                     <div>
-                      <span className="font-mono text-xs text-white/55">Academic Research Project · 2024</span>
+                      <span className="font-mono text-xs text-white/55">Academic Research Project · 2024 · </span>
                       <h3 className="text-xl sm:text-2xl font-bold text-white mt-1 inline-flex items-center gap-2">
-                        mitoMatch
+                       mitoMatch
                         {/* <ExternalLink size={15} className="opacity-0 group-hover:opacity-60 transition-opacity text-white/60" /> */}
                       </h3>
                     </div>
@@ -88,12 +88,12 @@ const EducationSection = () => {
                   </div>
 
                   <p className="text-white/75 text-sm sm:text-base leading-relaxed mb-4 group-hover:text-white/90 transition-colors">
-                    Full-stack ML genomic web tool for mtDNA analysis — identifies human relatedness from genetic data. Built a React frontend with a Flask backend and MongoDB, using BioPython, Pandas, NumPy and SHAP for model interpretability.
+                    Machine Learning genomic web tool for Mitochondrial DNA (mtDNA) analysis — identifies human relatedness from genetic data. Built a React frontend with a Flask backend using BioPython, Pandas, NumPy and SHAP for model interpretability.
                   </p>
 
                   {/* Tech tags */}
                   <div className="flex flex-wrap gap-1.5">
-                    {['React', 'Flask', 'MongoDB', 'BioPython', 'Pandas', 'NumPy', 'SHAP', 'TensorFlow'].map((tech) => (
+                    {['React', 'Flask', 'BioPython', 'Pandas', 'NumPy', 'SHAP', 'TensorFlow'].map((tech) => (
                       <span
                         key={tech}
                         className="px-2.5 py-1 text-xs font-mono bg-white/10 border border-white/20 rounded text-white/80 group-hover:bg-white/15 group-hover:border-white/30 transition-colors"
